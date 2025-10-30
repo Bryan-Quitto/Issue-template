@@ -32,6 +32,41 @@ h1 {
     border-radius: 8px 8px 0 0;
 }
 
+/* CAMBIO: Eliminado el 'h2' y añadido este nuevo estilo de banner */
+.form-header-expert {
+    background-color: #7B0000;
+    color: #ffffff;
+    font-size: 1.8em;
+    font-weight: 700;
+    text-align: left;
+    padding: 20px 30px;
+    margin: 40px -30px 25px -30px; /* Margen superior para la separación */
+    border-radius: 8px 8px 0 0;
+}
+
+.context-info {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f8f8f8;
+    border: 1px solid #eee;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+.context-item span {
+    display: block;
+    font-size: 0.9em;
+    color: #555;
+    font-weight: 500;
+}
+
+.context-item p {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #333;
+}
+
 form {
     width: 100%;
 }
@@ -51,12 +86,12 @@ legend {
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     font-weight: 500;
     color: #555;
 }
@@ -68,21 +103,23 @@ input[type="date"],
 input[type="number"],
 textarea {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-family: 'Roboto', sans-serif;
     font-size: 1em;
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-input[type="number"] {
-    -moz-appearance: textfield;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+    border-color: #7B0000;
+    box-shadow: 0 0 0 3px rgba(123, 0, 0, 0.1);
+    outline: none;
 }
 
 textarea {
@@ -90,46 +127,48 @@ textarea {
     resize: vertical;
 }
 
-.radio-group {
+.radio-group-modern {
     display: flex;
-    flex-wrap: nowrap;
-    gap: 20px;
-    padding: 5px 0;
-}
-
-.radio-group.wrap {
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 10px;
 }
 
-.radio-group label {
-    display: flex;
-    align-items: center;
-    font-weight: 400;
-    cursor: pointer;
+.radio-group-modern input[type="radio"] {
+    display: none;
 }
 
-input[type="radio"] {
-    margin-right: 6px;
+.radio-group-modern label {
+    display: inline-block;
+    padding: 10px 18px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
     cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+    margin-bottom: 0;
+}
+
+.radio-group-modern label:hover {
+    background-color: #f4f4f4;
+}
+
+.radio-group-modern input[type="radio"]:checked + label {
+    background-color: #7B0000;
+    color: #ffffff;
+    border-color: #7B0000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .grid-container {
     display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.grid-container-3col {
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-}
-
-.grid-span-1 {
-    grid-column: span 1;
-}
-
-.grid-span-2 {
-    grid-column: span 2;
-}
-
-.grid-span-3 {
-    grid-column: span 3;
+    gap: 20px;
 }
 
 .submit-btn {
@@ -150,26 +189,33 @@ input[type="radio"] {
     background-color: #5a0000;
 }
 
+@media (max-width: 768px) {
+    .grid-container-3col {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 600px) {
     .grid-container {
         grid-template-columns: 1fr;
     }
-    
-    .grid-span-1,
-    .grid-span-2,
-    .grid-span-3 {
-        grid-column: span 1;
-    }
 
-    .radio-group {
+    .context-info {
         flex-direction: column;
-        gap: 10px;
+        gap: 15px;
     }
-
+    
     h1 {
         font-size: 1.5em;
         padding: 15px 20px;
         margin: -30px -30px 20px -30px;
+    }
+
+    /* CAMBIO: Estilo responsive para el nuevo banner */
+    .form-header-expert {
+        font-size: 1.5em;
+        padding: 15px 20px;
+        margin: 40px -30px 20px -30px; /* Mantiene el margen superior */
     }
 
     legend {
