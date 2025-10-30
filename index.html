@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Solicitud de Cambios</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Formulario de Solicitud y Evaluación de Cambios en Proyectos</h1>
+
+        <form action="#" method="post">
+
+            <div class="form-group">
+                <label for="nombre-proyecto">Nombre del Proyecto</label>
+                <input type="text" id="nombre-proyecto" name="nombre_proyecto">
+            </div>
+
+            <fieldset>
+                <legend>Sección 1: Información General y Justificación</legend>
+
+                <div class="grid-container">
+                    <div class="form-group grid-span-1">
+                        <label for="num-cambio">N.° de Cambio</label>
+                        <input type="text" id="num-cambio" name="num_cambio">
+                    </div>
+                    <div class="form-group grid-span-2">
+                        <label for="titulo-cambio">Título Descriptivo del Cambio</label>
+                        <input type="text" id="titulo-cambio" name="titulo_cambio">
+                    </div>
+                    <div class="form-group grid-span-3">
+                        <label for="solicitado-por">Solicitado por (Nombre y Rol)</label>
+                        <input type="text" id="solicitado-por" name="solicitado_por">
+                    </div>
+                    <div class="form-group grid-span-2">
+                        <label for="email">Información de Contacto (Correo Electrónico)</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    <div class="form-group grid-span-1">
+                        <label for="telefono">Información de Contacto (Teléfono)</label>
+                        <input type="tel" id="telefono" name="telefono">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="fecha-solicitud">Fecha de Solicitud</label>
+                    <input type="date" id="fecha-solicitud" name="fecha_solicitud">
+                </div>
+
+                <div class="form-group">
+                    <label for="descripcion-cambio">Descripción Detallada del Cambio</label>
+                    <textarea id="descripcion-cambio" name="descripcion_cambio" rows="4"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="motivo-cambio">Motivo y Justificación del Cambio</label>
+                    <textarea id="motivo-cambio" name="motivo_cambio" rows="4"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Tipo de Cambio</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="tipo_cambio" value="nuevo_req"> Nuevo Requerimiento</label>
+                        <label><input type="radio" name="tipo_cambio" value="cambio_req"> Cambio a Requisito Existente</label>
+                        <label><input type="radio" name="tipo_cambio" value="defecto"> Defecto/Error</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Prioridad Solicitada</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="prioridad" value="alta"> Alta</label>
+                        <label><input type="radio" name="prioridad" value="media"> Media</label>
+                        <label><input type="radio" name="prioridad" value="baja"> Baja</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="fecha-requerida">Fecha Requerida de Implementación</label>
+                    <input type="date" id="fecha-requerida" name="fecha_requerida">
+                </div>
+
+                <div class="form-group">
+                    <label for="impacto-entregables">Impacto en Entregables o Funcionalidades</label>
+                    <textarea id="impacto-entregables" name="impacto_entregables" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="impacto-no-realizar">Impacto de NO Realizar el Cambio</label>
+                    <textarea id="impacto-no-realizar" name="impacto_no_realizar" rows="3"></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Sección 2: Análisis de Impacto y Solución Propuesta</legend>
+                
+                <div class="form-group">
+                    <label for="impacto-alcance">Impacto en Alcance y Tareas Afectadas</label>
+                    <textarea id="impacto-alcance" name="impacto_alcance" rows="3"></textarea>
+                </div>
+
+                <div class="grid-container">
+                    <div class="form-group">
+                        <label for="horas-estimadas">Horas Estimadas</label>
+                        <input type="number" id="horas-estimadas" name="horas_estimadas">
+                    </div>
+                    <div class="form-group">
+                        <label for="duracion-estimada">Duración Estimada (días/semanas)</label>
+                        <input type="text" id="duracion-estimada" name="duracion_estimada">
+                    </div>
+                    <div class="form-group">
+                        <label for="impacto-fecha-final">Impacto en la Fecha Final</label>
+                        <input type="text" id="impacto-fecha-final" name="impacto_fecha_final">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="costo-estimado">Costo Estimado del Cambio</label>
+                    <input type="number" id="costo-estimado" name="costo_estimado" step="0.01">
+                </div>
+
+                <div class="form-group">
+                    <label for="recursos-adicionales">Recursos Adicionales Necesarios (humanos y materiales)</label>
+                    <textarea id="recursos-adicionales" name="recursos_adicionales" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="elementos-configuracion">Elementos de Configuración Afectados</label>
+                    <textarea id="elementos-configuracion" name="elementos_configuracion" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="solucion-tecnica">Descripción de la Solución Técnica Propuesta</label>
+                    <textarea id="solucion-tecnica" name="solucion_tecnica" rows="4"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="impacto-potencial">Impacto Potencial en la Aplicación/Sistema</label>
+                    <textarea id="impacto-potencial" name="impacto_potencial" rows="3"></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Sección 3: Aprobación y Decisión</legend>
+
+                <div class="form-group">
+                    <label for="impacto-calidad">Calidad: ¿Cómo afectará a la calidad general del producto?</label>
+                    <textarea id="impacto-calidad" name="impacto_calidad" rows="3"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="riesgos-identificados">Riesgos Identificados</label>
+                    <textarea id="riesgos-identificados" name="riesgos_identificados" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="estrategias-mitigacion">Estrategias de Mitigación de Riesgos</label>
+                    <textarea id="estrategias-mitigacion" name="estrategias_mitigacion" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Decisión Final</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="decision_final" value="aprobado"> Aprobado</label>
+                        <label><input type="radio" name="decision_final" value="rechazado"> Rechazado</label>
+                        <label><input type="radio" name="decision_final" value="pospuesto"> Pospuesto (Deferred)</label>
+                        <label><input type="radio" name="decision_final" value="mas_info"> Se Requiere Más Información</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="justificacion-decision">Justificación de la Decisión</label>
+                    <textarea id="justificacion-decision" name="justificacion_decision" rows="3"></textarea>
+                </div>
+
+                <div class="grid-container">
+                    <div class="form-group grid-span-2">
+                        <label for="nombre-responsable">Nombre del Responsable</label>
+                        <input type="text" id="nombre-responsable" name="nombre_responsable">
+                    </div>
+                    <div class="form-group grid-span-1">
+                        <label for="titulo-responsable">Título</label>
+                        <input type="text" id="titulo-responsable" name="titulo_responsable">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="fecha-decision">Fecha de Decisión</label>
+                    <input type="date" id="fecha-decision" name="fecha_decision">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Sección 4: Seguimiento y Cierre</legend>
+
+                <div class="form-group">
+                    <label>Estado Actual de la Solicitud</label>
+                    <div class="radio-group wrap">
+                        <label><input type="radio" name="estado_actual" value="pendiente"> Pendiente</label>
+                        <label><input type="radio" name="estado_actual" value="en_revision"> En Revisión</label>
+                        <label><input type="radio" name="estado_actual" value="aprobado_cierre"> Aprobado</label>
+                        <label><input type="radio" name="estado_actual" value="rechazado_cierre"> Rechazado</label>
+                        <label><input type="radio" name="estado_actual" value="en_proceso"> En Proceso</label>
+                        <label><input type="radio" name="estado_actual" value="implementado"> Implementado</label>
+                        <label><input type="radio" name="estado_actual" value="verificado"> Verificado</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="responsable-implementacion">Responsable de la Implementación</label>
+                    <input type="text" id="responsable-implementacion" name="responsable_implementacion">
+                </div>
+
+                <div class="form-group">
+                    <label for="fecha-implementacion-final">Fecha de Implementación Final</label>
+                    <input type="date" id="fecha-implementacion-final" name="fecha_implementacion_final">
+                </div>
+
+                <div class="form-group">
+                    <label for="comentarios-cierre">Comentarios de Cierre/Verificación</label>
+                    <textarea id="comentarios-cierre" name="comentarios_cierre" rows="3"></textarea>
+                </div>
+
+            </fieldset>
+
+            <div class="form-group">
+                <button type="submit" class="submit-btn">Enviar Solicitud</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
